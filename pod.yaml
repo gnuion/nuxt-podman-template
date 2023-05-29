@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: node
+  name: nuxt-app
+spec:
+  containers:
+    - name: devcontainer
+      image: localhost/node-devcontainer
+      envFrom:
+        - configMapRef:
+            name: config
+            optional: false
+      ports:
+        - containerPort: 3000
+          hostPort: 3000
+        - containerPort: 24678
+          hostport: 24678
+      volumeMounts:
+        - mountPath: /app
+          name: app
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "500m"
+  volumes:
+    - hostPath:
+        path: ./
+        type: Directory
+      name: app

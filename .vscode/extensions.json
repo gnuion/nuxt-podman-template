@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "prisma.prisma",
+        "vue.vscode-typescript-vue-plugin",
+        "vue.volar",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+    ]
+}
